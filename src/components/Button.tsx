@@ -68,7 +68,7 @@ export default function Button() {
           ref={para}
           className="flex flex-row items-center justify-center gap-2 "
         >
-          Let's Go
+          Let&apos;s Go
           <span className="animate-pulse">
             <MoveRight />
           </span>
