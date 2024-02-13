@@ -1,8 +1,9 @@
-import Link from "next/link";
 import Welcome from "./Welcome";
 import Button from "./Button";
 
 export default function Enterance() {
+  const para = "I build beautiful web experiences.";
+  const paraArr = para.split("");
   return (
     <div
       className="flex items-center h-screen px-4 py-12 text-center md:px-6 md:py-24 lg:py-32 xl:min-h-[700px] bg-cover bg-center bg-no-repeat"
@@ -18,15 +19,11 @@ export default function Enterance() {
           </h1>
 
           <h2 className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            <Welcome
-              text={["I", "build", "beautiful", "web", "experiences."]}
-              margin={1}
-            />
+            <Welcome text={paraArr} margin={1} />
           </h2>
         </div>
-        <Link href="#">
-          <Button />
-        </Link>
+
+        <Button />
       </div>
     </div>
   );

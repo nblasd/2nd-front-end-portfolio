@@ -45,7 +45,14 @@ export default function Welcome({ text, margin }: propsType) {
   return (
     <div ref={container} className="overflow-hidden">
       {text.map((elem, index) => (
-        <h1 className={`welcome inline-block mx-${margin}`} key={index}>
+        <h1
+          className={
+            margin
+              ? `welcome inline-block mx-${margin}`
+              : "welcome inline-block mx-1"
+          }
+          key={index}
+        >
           {elem}
         </h1>
       ))}
