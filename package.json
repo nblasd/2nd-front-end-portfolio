@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.0",
+    "@react-three/drei": "^9.97.5",
+    "@react-three/fiber": "^8.15.16",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "gsap": "^3.12.5",
@@ -19,6 +21,7 @@
     "react-dom": "^18",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
+    "three": "^0.161.0",
     "zustand": "^4.5.0"
   },
   "devDependencies": {

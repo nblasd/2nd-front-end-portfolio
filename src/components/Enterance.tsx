@@ -14,12 +14,12 @@ export default function Enterance() {
     >
       <div className="container flex flex-1 flex-col gap-4 items-center justify-center">
         <div className="space-y-3">
-          <h1 className="text-4xl sm:text-6xl font-bold  md:text-8xl text-slate-300">
-            <Welcome text={["w", "e", "l", "c", "o", "m", "e"]} margin={5} />
+          <h1 className="text-4xl sm:text-6xl font-bold  md:text-8xl text-slate-300 uppercase">
+            <Welcome text={["w", "e", "l", "c", "o", "m", "e"]} />
           </h1>
 
           <h2 className="text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-            <Welcome text={paraArr} margin={1} />
+            <Welcome text={paraArr} />
           </h2>
         </div>
 
