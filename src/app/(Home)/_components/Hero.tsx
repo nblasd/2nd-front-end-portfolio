@@ -10,8 +10,6 @@ const intro = [
   `skills, in full-stack development while specializing in front-end technologies,`,
 ];
 
-const text = "Welcome to My Portfolio";
-const textArr = text.split(" ");
 export default function Hero() {
   const container = React.useRef(null);
 
@@ -30,17 +28,44 @@ export default function Hero() {
         y: -100,
       });
 
-      tl.from("#welcome", {
+      tl.from(["#w1", "#w2", "#w3", "#w4", "#w5", "#w6", "#w7", "#w8", "#w9"], {
         y: 200,
         delay: 0.5,
         duration: 0.5,
-        stagger: 0.5,
+        stagger: {
+          amount: 0.5,
+          from: "center",
+        },
       });
       tl.from("#first-span", {
         y: 200,
         delay: 1,
         duration: 1,
         stagger: 0.5,
+      });
+      tl.to(["#w1", "#w6"], {
+        rotateX: 540,
+        duration: 2,
+        repeatDelay: 1,
+        repeat: -1,
+        yoyo: true,
+        stagger: 0.5,
+      });
+      tl.to(["#w3", "#w8"], {
+        rotateY: 360,
+        duration: 1,
+        repeatDelay: 1,
+        repeat: -1,
+        yoyo: true,
+        stagger: 0.5,
+      });
+      tl.to("#rotate-para", {
+        rotateZ: 10,
+        duration: 1,
+        repeat: -1,
+        repeatDelay: 1,
+        yoyo: true,
+        ease: "back.inOut",
       });
       gsap.from(["#what", "#para2", "#para4"], {
         scrollTrigger: {
@@ -60,15 +85,21 @@ export default function Hero() {
         },
         xPercent: 100,
       });
-      // gsap.to("#third-part", {
-      //   scrollTrigger: {
-      //     trigger: "#second-part",
-      //     start: "center center",
-      //     markers: true,
-      //     scrub: true,
-      //   },
-      //   yPercent: -200,
-      // });
+      const tl2 = gsap.timeline();
+      tl2.to("#I", {
+        rotateX: 540,
+        duration: 2,
+        repeatDelay: 1,
+        repeat: -1,
+        yoyo: true,
+      });
+      tl2.to("#question-mark", {
+        rotateY: 360,
+        duration: 1,
+        repeatDelay: 1,
+        repeat: -1,
+        yoyo: true,
+      });
     },
     { scope: container }
   );
@@ -78,18 +109,23 @@ export default function Hero() {
       {/* first part */}
       <div
         id="first-part"
-        className="flex items-center h-screen w-full flex-col mt-52"
+        className="flex items-center h-screen w-full flex-col mt-40"
       >
-        <h1 className="text-3xl text-green-500 p-2 md:text-8xl font-bold overflow-hidden flex flex-row items-center justify-center mb-20">
-          {textArr.map((text, index) => (
-            <p key={index} id="welcome" className="mx-1">
-              {text}
-            </p>
-          ))}
+        <h1 className="relative text-3xl text-green-500 p-2 md:text-8xl font-bold overflow-hidden flex flex-row items-center justify-center mb-20 border-2 border-white rounded-lg">
+          <span id="w1">W</span>
+          <span id="w2">elcome</span>
+          <span id="w3">T</span>
+          <span id="w4">o</span>
+          <span id="w5">M</span>
+          <span id="w6">Y</span>
+          <span id="w7">Port</span>
+          <span id="w8">f</span>
+          <span id="w9">olio</span>
         </h1>
 
         {intro.map((item, index) => (
           <p
+            id="rotate-para"
             key={index}
             className="md:text-2xl text-gray-400 w-[90%] md:max-w-screen-md overflow-hidden"
           >
@@ -105,7 +141,14 @@ export default function Hero() {
         className="flex items-center w-full bg-[#0C2D57] min-h-screen justify-center flex-col gap-10 text-[#FC6736]"
       >
         <h1 id="what" className="text-5xl md:text-8xl font-bold">
-          What I Do?
+          What{" "}
+          <span id="I" className="inline-block ">
+            i
+          </span>{" "}
+          Do
+          <span id="question-mark" className="inline-block">
+            ?
+          </span>
         </h1>
         <p
           id="para1"
@@ -132,15 +175,6 @@ export default function Hero() {
           the latest tools and technologies.
         </p>
       </div>
-      {/* third part */}
-      {/* <div id="third-part" className="min-h-screen bg-[#1F2544] text-[#81689D]">
-        <h1>My Portfolio</h1>
-        <p>
-          Check out some of my recent projects below. Each one showcases my
-          attention to detail, creativity, and dedication to delivering
-          high-quality work. Feel free to explore and see what I can do.
-        </p>
-      </div> */}
     </main>
   );
 }
